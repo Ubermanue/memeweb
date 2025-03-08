@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Meme API</title>
+    <title>Random Meme Generator</title>
     <link rel="stylesheet" href="style.css"> <!-- Link to the CSS file -->
 </head>
 <body>
@@ -15,28 +15,6 @@
         </div>
     </div>
 
-    <script>
-        document.getElementById('getMemeBtn').addEventListener('click', async () => {
-            const memeContainer = document.getElementById('memeContainer');
-            memeContainer.innerHTML = 'Loading...';
-
-            try {
-                // Fetch the meme from your API
-                const response = await fetch('https://memeapi-5gmm.onrender.com/memes/random');
-                if (response.ok) {
-                    // Get the image content from the response
-                    const imageBlob = await response.blob();
-                    const imageURL = URL.createObjectURL(imageBlob);
-
-                    // Display the image on the page
-                    memeContainer.innerHTML = `<img src="${imageURL}" alt="Random Meme" />`;
-                } else {
-                    memeContainer.innerHTML = 'Failed to load meme.';
-                }
-            } catch (error) {
-                memeContainer.innerHTML = 'Error fetching meme image.';
-            }
-        });
-    </script>
+    <script src="app.js"></script> <!-- Link to the external app.js file -->
 </body>
 </html>
